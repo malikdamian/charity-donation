@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% load poll_extras %}
+{% load static %}
+        <section id="steps" class="steps">
+      <div class="steps--container">
+          <h1>{{ user.first_name }}</h1>
+            <h1>{{ user.last_name}}</h1>
+          <h1>{{ user.username }}</h1>
+          <h1>Oddanych worków: {% get_total_bags_user %}</h1>
+          {% for donation in donations %}
+             <h1>Wsparte insytucje: {{ donation.institution_id}}</h1>
+          {% endfor %}
+        </div>
+      </div>
+
+    </section>
+{% endblock %}
